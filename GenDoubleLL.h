@@ -5,7 +5,7 @@
 
 using namespace std;
 
-//template class================================================================
+
 template <class T>
 class GenDoubleLL
 {
@@ -60,12 +60,12 @@ void GenDoubleLL<T>::insertFront(T* d)
 {
   ListNode<T> *node = new ListNode<T>(d);
 
-  if(size == 0) //empty ListNode<T>
+  if(size == 0)
   {
     back = node;
   }
 
-  else //not empty
+  else
   {
     front->prev = node;
     node->next = front;
@@ -102,11 +102,10 @@ T* GenDoubleLL<T>::removeFront()
     exit(EXIT_FAILURE);
   }
 
-  else if (front->next == NULL) { //only node in ListNode<T>;
+  else if (front->next == NULL) {
     back = NULL;
   }
 
-  else // more than one node in ListNode<T>
   {
     front->next->prev = NULL;
   }
@@ -130,7 +129,7 @@ T* GenDoubleLL<T>::removeBack()
     exit(EXIT_FAILURE);
   }
 
-  else if (front->next == NULL) //only one element
+  else if (front->next == NULL)
   {
     front = NULL;
   }
@@ -195,15 +194,15 @@ int GenDoubleLL<T>::find(T value)
   int idx = -1;
   ListNode<T> *curr = front;
 
-  while(curr != NULL) //begin search for value
+  while(curr != NULL)
   {
     idx++;
 
-    if(curr->data == value) //we found it
+    if(curr->data == value)
     {
       break;
     }
-    else //we did not find it continue searching
+    else
     {
       curr = curr->next;
     }
@@ -225,14 +224,14 @@ T GenDoubleLL<T>::deletePos(int pos)
   ListNode<T> *curr = front;
   ListNode<T> *prev = front;
 
-  while(idx != pos) //this loop is responsible for putting our pointers in their correct positions
+  while(idx != pos)
   {
     prev = curr;
     curr = curr->next;
     ++idx;
   }
 
-  //found the position, lets proceed to delete
+
 
   prev->next = curr->next;
   curr->next = NULL;

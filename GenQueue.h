@@ -81,6 +81,3 @@ template <class T>
 void GenQueue<T>::printQueue() {
   myQueue->printList();
 }
-
-
-#endif
