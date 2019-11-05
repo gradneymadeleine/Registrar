@@ -5,19 +5,19 @@
 using namespace std;
 
 class FileInOut{
-public:
-  File(); //default constructor
+  public:
+  File(string fileName); //default constructor
   ~File(); //destructor
 
-  void openFile(string path); //open ifstream
-  void closeFile(); //close ifstream
-  string readLine(); //reads readLine
+  void readFile();
+  void get_timeList();
+  void get_waitingTimeList();
 
-  void openOutFile(string path); //open ofstream
-  void closeOutFile(); //close ofstream
-  void writeLine(string s); //write a line into the file
-  void write(string s);
-
-
-  ifstream in;
-  ofstream out;
+  string filename;
+  int num_window;
+  int num_student;
+  int tine;
+  int current_student_num;
+  GenDoublyLL *timeList;
+  GenDoublyLL *waitingTimeList;
+};
