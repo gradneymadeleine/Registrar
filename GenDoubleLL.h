@@ -168,7 +168,7 @@ ListNode<T>* GenDoubleLL<T>::remove(T key)
     current->prev->next = current->next;
   }
 
-  if (current = back) {
+  if (current == back) {
     back = current->prev;
   }
 

@@ -1,4 +1,4 @@
-#inlcude "GenDoubleLL.h"
+#include "GenDoubleLL.h"
 #include <iostream>
 
 using namespace std;
